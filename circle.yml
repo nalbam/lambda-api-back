@@ -4,7 +4,7 @@ machine:
     version: 0.10.22
 
 dependencies:
-  pre:
+  override:
     - curl -s toast.sh/install-v3 | bash
   post:
     - ~/toaster/toast.sh c REGION ap-northeast-2
