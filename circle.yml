@@ -23,7 +23,9 @@ deployment:
     branch: /^(?!master$).*$/
     commands:
       - ~/toaster/toast.sh p bk
+      - ~/toaster/toast.sh d ld
   production:
     branch: master
     commands:
       - ~/toaster/toast.sh p bk
+      - ~/toaster/toast.sh d ld
