@@ -24,10 +24,9 @@ deployment:
   development:
     branch: /^(?!master$).*$/
     commands:
-      - ~/toaster/toast.sh p bk
-      - ~/toaster/toast.sh d ld
+      - ~/toaster/toast.sh p bucket
   production:
     branch: master
     commands:
-      - ~/toaster/toast.sh p bk
-      - ~/toaster/toast.sh d ld
+      - ~/toaster/toast.sh p bucket
+      - ~/toaster/toast.sh d lambda back
