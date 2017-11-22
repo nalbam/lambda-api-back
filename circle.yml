@@ -1,7 +1,7 @@
 machine:
   timezone: Asia/Seoul
   node:
-    version: 0.10.22
+    version: 6.10.3
 
 dependencies:
   override:
@@ -11,6 +11,8 @@ dependencies:
     - ~/toaster/toast.sh c BUCKET repo.nalbam.com
 
 compile:
+  pre:
+    - ~/toaster/toast.sh v $CIRCLE_BRANCH
   override:
     - ~/toaster/toast.sh b lambda node
 
