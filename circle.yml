@@ -12,7 +12,7 @@ dependencies:
 
 compile:
   override:
-    - ~/toaster/toast.sh b lambda
+    - ~/toaster/toast.sh b lambda node
 
 test:
   override:
