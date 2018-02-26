@@ -11,6 +11,7 @@ build:
   stage: build
   image: node:latest
   script:
+    - ~/toaster/toast.sh prepare
     - ~/toaster/toast.sh build node
   artifacts:
     paths:
