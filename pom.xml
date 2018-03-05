@@ -9,6 +9,6 @@
     <packaging>zip</packaging>
 
     <name>lambda-back</name>
-    <url>http://back.nalbam.com</url>
+    <url>http://back-api.nalbam.com</url>
 
 </project>
