@@ -20,7 +20,6 @@ release:
   stage: release
   image: nalbam/builder:python
   script:
-    - pip install awscli
     - aws s3 cp lambda.zip $S3_KEY
 
 deploy:
@@ -29,7 +28,6 @@ deploy:
   only:
     - master
   script:
-    - pip install awscli
     - aws lambda update-function-code --function-name $FUNCTION --s3-bucket $S3_BUCKET --s3-key $S3_KEY
 
 after_script:
