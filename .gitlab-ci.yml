@@ -6,6 +6,7 @@ stages:
   - deploy
 
 variables:
+  FUNCTION: back-dev
   S3_BUCKET: repo.nalbam.com
   S3_KEY: $CI_PROJECT_NAME/$CI_COMMIT_REF_NAME/lambda.zip
 
@@ -13,7 +14,7 @@ build:
   stage: build
   image: nalbam/builder:node
   script:
-    - cd src && npm install && zip -q -r ../lambda.zip *
+    - cd src && npm install && zip -r ../lambda.zip *
 
 release:
   stage: release
@@ -27,7 +28,7 @@ deploy:
   only:
     - master
   script:
-    - aws lambda update-function-code --function-name back-dev --s3-bucket $S3_BUCKET --s3-key $S3_KEY
+    - aws lambda update-function-code --function-name $FUNCTION --s3-bucket $S3_BUCKET --s3-key $S3_KEY
 
 after_script:
   - ls -alh target
