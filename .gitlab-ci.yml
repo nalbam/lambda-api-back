@@ -36,3 +36,4 @@ deploy:
 
 after_script:
   - ls -alh
+  - ls -alh target
