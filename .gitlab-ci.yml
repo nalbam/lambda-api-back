@@ -20,7 +20,7 @@ release:
   stage: release
   image: nalbam/builder:python
   script:
-    - aws s3 cp lambda.zip $S3_KEY
+    - aws s3 cp lambda.zip s3://$S3_BUCKET/$S3_KEY
 
 deploy:
   stage: deploy
