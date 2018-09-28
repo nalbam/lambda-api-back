@@ -24,7 +24,7 @@ module "dev-api-back" {
 
   name         = "${var.name}"
   stage        = "${var.stage}"
-  description  = "route53 > api gateway > lambda"
+  description  = "api > lambda > back"
   runtime      = "nodejs8.10"
   handler      = "index.handler"
   memory_size  = 512
