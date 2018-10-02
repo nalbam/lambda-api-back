@@ -34,9 +34,16 @@ module "dev-api-back" {
   s3_key       = "lambda/${var.name}/${var.name}-${var.version}.zip"
   http_methods = ["ANY"]
 
+  // domain
   zone_id         = "${module.domain.zone_id}"
   certificate_arn = "${module.domain.certificate_arn}"
-  domain_name     = "${var.name}-${var.stage}.${var.domain}"
+  domain_name     = "${var.stage}-${var.name}.${var.domain}"
+
+  // cognito
+  # user_pool_name = "${var.stage}-${var.name}"
+
+  // dynamodb
+  # dynamodb = "${var.stage}-${var.name}"
 
   env_vars = {
     PROFILE = "${var.stage}"
