@@ -5,8 +5,8 @@ const doc = require('dynamodb-doc'),
     debug = true;
 
 if (!debug) {
-    console.log = () => {};
-    console.error = () => {};
+    console.log = () => { };
+    console.error = () => { };
 }
 
 exports.handler = (event, context, callback) => {
